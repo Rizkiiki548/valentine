@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Valentine Mini Site</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div id="hearts" aria-hidden="true"></div>
+    <button class="muteBtn" id="muteBtn" type="button" aria-label="Mute/unmute">🔊</button>
+
+    <audio id="bgm" loop preload="auto">
+      <source src="lagu/backsound.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div class="wrap">
+      <div class="stage">
+        <!-- PAGE 0 -->
+        <section class="page active" data-page="0">
+          <h1 class="title">Happy Valentine’s Day! ❤️</h1>
+          <div class="center">
+            <div class="bubble">
+              <img class="bubblePhoto" id="bubblePhoto" src="foto/1.jpeg" alt="Foto" />
+            </div>
+            <p class="subtitle">(o‿o) <br />Click tombol next yaa! (づ｡◕‿‿◕｡)づ❤️</p>
+            <div class="btnrow">
+              <button class="btn" data-next>Next!! ^w^</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- PAGE 1 -->
+        <section class="page" data-page="1">
+          <h2 class="title small">Do you want to open it?</h2>
+          <div class="center">
+            <div class="photoCard">
+              <img id="openCardImg" src="foto/2.jpeg" alt="foto" />
+            </div>
+
+            <div class="choice">
+              <button class="btn" id="openBtn">Open it</button>
+              <button class="btn secondary" id="noBtn">No ty</button>
+            </div>
+
+            <div class="hint">psst… tombol “No ty” suka ngambek 😼</div>
+          </div>
+        </section>
+
+        <!-- PAGE 2 -->
+        <section class="page" data-page="2">
+          <div class="center" style="min-height: 280px">
+            <h2 class="title alt">Awh… Let’s try again, please..? &gt;_&lt; 💗</h2>
+            <div class="btnrow">
+              <button class="btn" data-go="1">Again..?</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- PAGE 3 -->
+        <section class="page" data-page="3">
+          <h2 class="letterTitle">Happy Valentine’s Day</h2>
+          <div class="heartsline">❤️❤️❤️</div>
+
+          <div class="letter">
+            <p>Happy Valentine’s Day 😊</p>
+            <p>Aku nggak tahu kamu bakal baca ini kapan (atau kamu nemu ini pas lagi gabut scroll-scroll aja halo 😄). Tapi aku tetep mau bilang: aku bersyukur banget pernah kenal kamu.</p>
+            <p>Makasih ya… buat momen-momen kecil yang kamu kasih. Yang bikin hari biasa jadi agak lebih “hidup”. Kamu sempet jadi tempat yang bikin aku napas lebih lega… dan kalau Tuhan izinin, aku pengen kita pelan-pelan baik lagi.</p>
+            <p>Aku sadar akhir-akhir ini aku kadang kebanyakan mikir, kebanyakan merasa, dan kadang terlalu “aku-aku-aku”. Maaf kalau itu bikin kamu capek atau kerasa berat. Aku nggak mau jadi alasan kamu kehilangan tenang.</p>
+            <p>
+              Jadi hari ini aku cuma mau doain yang baik: semoga kamu sehat, kuat, dan semua urusan kamu dimudahin. Kalau sekarang kamu lagi butuh ruang, aku hormati. Kalau suatu hari kamu mau ngobrol lagi, aku ada. Kalau enggak pun, gapapa
+              aku tetap ingin kamu bahagia.
+            </p>
+            <p>Dan ya… kalau kamu butuh payung, buku, atau orang yang bisa disuruh “tolong satukan PDF”, aku masih kandidat yang cukup niat kok 😌😂</p>
+            <p><b>You deserve the best today and every day 🤍</b> Happy Valentine’s Day, kamu 💞</p>
+          </div>
+
+          <div class="btnrow">
+            <button class="btn" data-next>Next →</button>
+          </div>
+        </section>
+
+        <!-- PAGE 4: GAME 1 -->
+        <section class="page" data-page="4">
+          <h2 class="title small">Game 1 😳💘</h2>
+          <p class="subtitle"><b>Tangkap 10 💖</b> dalam <b>10 detik</b> yaa! Menang = peluk virtual 🫂💗</p>
+
+          <div class="gameTop">
+            <div class="miniPhotoWrap">
+              <img id="gamePhoto1" class="miniPhoto" src="foto/1.jpeg" alt="Foto dia" />
+            </div>
+          </div>
+
+          <div class="gameStats">
+            <div><b>Target:</b> <span id="heartTarget">10</span> 💖</div>
+            <div><b>Waktu:</b> <span id="heartTime">10</span>s</div>
+            <div><b>Score:</b> <span id="heartScore">0</span></div>
+          </div>
+
+          <div class="arena" id="heartArena"></div>
+          <div class="gameMsg" id="heartMsg">Klik hati yang muncul ya 😳💗</div>
+
+          <div class="btnrow">
+            <button class="btn secondary" id="heartStartBtn" type="button">Start</button>
+            <button class="btn" id="heartNextBtn" data-next disabled>Next →</button>
+          </div>
+        </section>
+
+        <!-- PAGE 5: GAME 2 -->
+        <section class="page" data-page="5">
+          <h2 class="title small">Game 2 🥺💞</h2>
+          <p class="subtitle"><b>Memory Love Cards!</b> Cocokin pasangan bucin-nya~ ✨</p>
+
+          <div class="gameTop">
+            <div class="miniPhotoWrap">
+              <img id="gamePhoto2" class="miniPhoto" src="foto/1.jpeg" alt="Foto dia" />
+            </div>
+          </div>
+
+          <div class="gameStats">
+            <div><b>Moves:</b> <span id="memMoves">0</span></div>
+            <div><b>Match:</b> <span id="memMatch">0</span>/<span id="memTotal">4</span></div>
+            <div><b>Status:</b> <span id="memStatus">Main dulu ya 😼</span></div>
+          </div>
+
+          <div class="memoryGrid" id="memoryGrid"></div>
+          <div class="gameMsg" id="memMsg">Cocokin pasangan romantisnya yaa 🥺💞</div>
+
+          <div class="btnrow">
+            <button class="btn secondary" id="memRestartBtn" type="button">Restart</button>
+            <button class="btn" id="memNextBtn" data-next disabled>Next →</button>
+          </div>
+        </section>
+
+        <!-- PAGE 6 -->
+        <section class="page" data-page="6">
+          <h2 class="title">Our Memories :3 🥇</h2>
+
+          <div class="grid" id="memGrid"></div>
+
+          <div class="btnrow">
+            <button class="btn" data-next>Next →</button>
+          </div>
+        </section>
+        <!-- PAGE 7: VIDEO -->
+        <section class="page" data-page="7">
+          <h2 class="title small">One last thing… 🥺💗</h2>
+          <p class="subtitle">Aku bikinin video kecil buat kamu… (tap play ya)</p>
+
+          <div class="videoWrap">
+            <video id="finalVideo" class="finalVideo" controls playsinline preload="metadata">
+              <source src="video/time.mp4" type="video/mp4" />
+              Browser kamu gak support video.
+            </video>
+          </div>
+
+          <div class="btnrow">
+            <button class="btn secondary" data-go="6">← Balik</button>
+            <button class="btn" data-go="0">Ulang dari awal ↺</button>
+          </div>
+        </section>
+
+        <!-- POPUP: HANYA NAMPILIN FOTO + OK -->
+        <div class="modal" id="photoModal" aria-hidden="true">
+          <div class="modalBackdrop" data-close="photoModal"></div>
+
+          <div class="modalCard" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <h3 class="modalTitle" id="modalTitle">yippiiii 🥺💗</h3>
+            <div class="modalText">Makasih yaa...</div>
+            <div class="modalTiny">Gemes banget 💞</div>
+
+            <img id="modalPreview" class="modalPhoto" src="foto/dia.jpg" alt="Foto dia" />
+
+            <button class="modalOk" id="modalOk" type="button">OK</button>
+          </div>
+        </div>
+        <!-- POPUP VIDEO -->
+        <div class="modal" id="videoModal" aria-hidden="true">
+          <div class="modalBackdrop" data-close="videoModal"></div>
+
+          <div class="modalCard videoModalCard" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+            <h3 class="modalTitle" id="videoModalTitle">cuma video biasa hehehe 😳💗</h3>
+            <div class="modalTiny">Klo gak diliat juga gapapa wkwkwk</div>
+
+            <div class="btnrow">
+              <button class="btn secondary" id="videoCancelBtn" type="button">Nanti dulu</button>
+              <button class="btn" id="videoPlayBtn" type="button">Play ▶</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
