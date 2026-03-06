@@ -350,7 +350,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const heartStartBtn = document.getElementById("heartStartBtn");
   const heartNextBtn = document.getElementById("heartNextBtn");
 
-  const HEART_TARGET = 2;
+  const HEART_TARGET = 10;
   const HEART_TIME = 10;
   const MAX_ITEMS = 7;
 
